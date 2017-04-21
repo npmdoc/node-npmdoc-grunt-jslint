@@ -1,0 +1,1790 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/stephenmathieson/grunt-jslint"
+
+    >grunt-jslint (v1.1.14)</a>
+</h1>
+<h4>Validates JavaScript files with JSLint</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-jslint">module grunt-jslint</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.JSLINT">
+            function <span class="apidocSignatureSpan">grunt-jslint.</span>JSLINT
+            <span class="apidocSignatureSpan">(the_source, the_option)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.loadJSLint">
+            function <span class="apidocSignatureSpan">grunt-jslint.</span>loadJSLint
+            <span class="apidocSignatureSpan">(edition, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.loadJSLintFromPath">
+            function <span class="apidocSignatureSpan">grunt-jslint.</span>loadJSLintFromPath
+            <span class="apidocSignatureSpan">(path, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.preprocessScript">
+            function <span class="apidocSignatureSpan">grunt-jslint.</span>preprocessScript
+            <span class="apidocSignatureSpan">(source, stripShebang)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.runner">
+            function <span class="apidocSignatureSpan">grunt-jslint.</span>runner
+            <span class="apidocSignatureSpan">(files, opts, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.validate">
+            function <span class="apidocSignatureSpan">grunt-jslint.</span>validate
+            <span class="apidocSignatureSpan">(file, opts, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grunt-jslint.</span>jslint</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grunt-jslint.</span>reporters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grunt-jslint.</span>reporters._util</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">grunt-jslint.</span>edition</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-jslint.JSLINT">module grunt-jslint.JSLINT</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.JSLINT.JSLINT">
+            function <span class="apidocSignatureSpan">grunt-jslint.</span>JSLINT
+            <span class="apidocSignatureSpan">(the_source, the_option)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.JSLINT.color">
+            function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>color
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.JSLINT.data">
+            function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>data
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.JSLINT.error_report">
+            function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>error_report
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.JSLINT.jslint">
+            function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>jslint
+            <span class="apidocSignatureSpan">(the_source, the_option)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.JSLINT.properties_report">
+            function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>properties_report
+            <span class="apidocSignatureSpan">(property)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.JSLINT.report">
+            function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>report
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>edition</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-jslint.jslint">module grunt-jslint.jslint</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.jslint.JSLINT">
+            function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>JSLINT
+            <span class="apidocSignatureSpan">(the_source, the_option)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.jslint.loadJSLint">
+            function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>loadJSLint
+            <span class="apidocSignatureSpan">(edition, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.jslint.loadJSLintFromPath">
+            function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>loadJSLintFromPath
+            <span class="apidocSignatureSpan">(path, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.jslint.preprocessScript">
+            function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>preprocessScript
+            <span class="apidocSignatureSpan">(source, stripShebang)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.jslint.runner">
+            function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>runner
+            <span class="apidocSignatureSpan">(files, opts, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.jslint.validate">
+            function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>validate
+            <span class="apidocSignatureSpan">(file, opts, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>reporters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>edition</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-jslint.reporters">module grunt-jslint.reporters</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.reporters.checkstyle">
+            function <span class="apidocSignatureSpan">grunt-jslint.reporters.</span>checkstyle
+            <span class="apidocSignatureSpan">(report)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.reporters.errorsOnly">
+            function <span class="apidocSignatureSpan">grunt-jslint.reporters.</span>errorsOnly
+            <span class="apidocSignatureSpan">(report)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.reporters.jslint">
+            function <span class="apidocSignatureSpan">grunt-jslint.reporters.</span>jslint
+            <span class="apidocSignatureSpan">(report)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.reporters.junit">
+            function <span class="apidocSignatureSpan">grunt-jslint.reporters.</span>junit
+            <span class="apidocSignatureSpan">(report)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.reporters.standard">
+            function <span class="apidocSignatureSpan">grunt-jslint.reporters.</span>standard
+            <span class="apidocSignatureSpan">(report, errorsOnly)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grunt-jslint.reporters.</span>_util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-jslint.reporters._util">module grunt-jslint.reporters._util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.reporters._util.escapeForXml">
+            function <span class="apidocSignatureSpan">grunt-jslint.reporters._util.</span>escapeForXml
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-jslint.reporters._util.message">
+            function <span class="apidocSignatureSpan">grunt-jslint.reporters._util.</span>message
+            <span class="apidocSignatureSpan">(issue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grunt-jslint.reporters._util.</span>color</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-jslint" id="apidoc.module.grunt-jslint">module grunt-jslint</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.JSLINT" id="apidoc.element.grunt-jslint.JSLINT">
+        function <span class="apidocSignatureSpan">grunt-jslint.</span>JSLINT
+        <span class="apidocSignatureSpan">(the_source, the_option)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSLint(the_source, the_option) {
+
+    var i, predef, tree;
+    itself.errors = [];
+    itself.tree = &#x27;&#x27;;
+    itself.properties = &#x27;&#x27;;
+    begin = prev_token = token = next_token =
+        Object.create(syntax[&#x27;(begin)&#x27;]);
+    tokens = [];
+    predefined = Object.create(null);
+    add_to_predefined(standard);
+    property = Object.create(null);
+    if (the_option) {
+        option = Object.create(the_option);
+        predef = option.predef;
+        if (predef) {
+            if (Array.isArray(predef)) {
+                for (i = 0; i &#x3c; predef.length; i += 1) {
+                    predefined[predef[i]] = true;
+                }
+            } else if (typeof predef === &#x27;object&#x27;) {
+                add_to_predefined(predef);
+            }
+        }
+    } else {
+        option = Object.create(null);
+    }
+    option.indent = +option.indent || 4;
+    option.maxerr = +option.maxerr || 50;
+    global_scope = scope = Object.create(null);
+    global_funct = funct = {
+        scope: scope,
+        loopage: 0,
+        level: 0
+    };
+    functions = [funct];
+    block_var = [];
+
+    comments = [];
+    comments_off = false;
+    in_block = false;
+    indent = null;
+    json_mode = false;
+    lookahead = [];
+    node_js = false;
+    prereg = true;
+    strict_mode = false;
+    var_mode = null;
+    warnings = 0;
+    lex.init(the_source);
+
+    assume();
+
+    try {
+        advance();
+        if (next_token.id === &#x27;(number)&#x27;) {
+            next_token.stop(&#x27;unexpected_a&#x27;);
+        } else {
+            switch (next_token.id) {
+            case &#x27;{&#x27;:
+            case &#x27;[&#x27;:
+                comments_off = true;
+                json_mode = true;
+                json_value();
+                break;
+            default:
+
+// If the first token is a semicolon, ignore it. This is sometimes used when
+// files are intended to be appended to files that may be sloppy. A sloppy
+// file may be depending on semicolon insertion on its last line.
+
+                step_in(1);
+                if (next_token.id === &#x27;;&#x27; &#x26;&#x26; !node_js) {
+                    next_token.edge = true;
+                    advance(&#x27;;&#x27;);
+                }
+                tree = statements();
+                begin.first = tree;
+                itself.tree = begin;
+                if (tree.disrupt) {
+                    prev_token.warn(&#x27;weird_program&#x27;);
+                }
+            }
+        }
+        indent = null;
+        advance(&#x27;(end)&#x27;);
+        itself.property = property;
+    } catch (e) {
+        if (e) {        // ~~
+            itself.errors.push({
+                reason    : e.message,
+                line      : e.line || next_token.line,
+                character : e.character || next_token.from
+            }, null);
+        }
+    }
+    return itself.errors.length === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.loadJSLint" id="apidoc.element.grunt-jslint.loadJSLint">
+        function <span class="apidocSignatureSpan">grunt-jslint.</span>loadJSLint
+        <span class="apidocSignatureSpan">(edition, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadJSLint(edition, cb) {
+  JSLINT = jslint.JSLINT = nodelint.load(edition);
+  jslint.edition = JSLINT.edition;
+
+  if (cb) {
+    cb(null, jslint.edition);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.loadJSLintFromPath" id="apidoc.element.grunt-jslint.loadJSLintFromPath">
+        function <span class="apidocSignatureSpan">grunt-jslint.</span>loadJSLintFromPath
+        <span class="apidocSignatureSpan">(path, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadJSLintFromPath(path, cb) {
+  var ctx = vm.createContext();
+  var code = fs.readFileSync(resolve(process.cwd(), path));
+
+  vm.runInContext(code, ctx);
+
+  JSLINT = jslint.JSLINT = ctx.JSLINT;
+  jslint.edition = JSLINT.edition;
+
+  if (cb) {
+    cb(null, jslint.edition);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.preprocessScript" id="apidoc.element.grunt-jslint.preprocessScript">
+        function <span class="apidocSignatureSpan">grunt-jslint.</span>preprocessScript
+        <span class="apidocSignatureSpan">(source, stripShebang)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function preprocessScript(source, stripShebang) {
+  if (source.charCodeAt(0) === 0xFEFF) {
+    source = source.slice(1);
+  }
+
+  if (stripShebang) {
+    // remove shebang lines for executable files
+    //   e.g. `#!/usr/bin/env node`
+<span class="apidocCodeCommentSpan">    /*jslint regexp: true*/
+</span>    source = source.replace(/^\#\!.*/, &#x27;&#x27;);
+    /*jslint regexp: false*/
+  }
+
+  return source;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  fs.readFile(file, &#x27;utf8&#x27;, function (err, source) {
+if (err) {
+  return cb(err);
+}
+
+source = jslint.<span class="apidocCodeKeywordSpan">preprocessScript</span>(source, opts.shebang);
+
+JSLINT(source, directives);
+
+var violations = JSLINT.errors;
+var res = [];
+
+violations.forEach(function (violation) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.runner" id="apidoc.element.grunt-jslint.runner">
+        function <span class="apidocSignatureSpan">grunt-jslint.</span>runner
+        <span class="apidocSignatureSpan">(files, opts, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runner = function (files, opts, cb) {
+  var pending = files.length;
+  var report = {
+    files: {},
+    failures: 0,
+    file_count: files.length,
+    files_in_violation: 0
+  };
+  var done = false;
+
+  if (opts.edition) {
+    if (opts.edition.indexOf(&#x22;.js&#x22;) === opts.edition.length - 3) {
+      loadJSLintFromPath(opts.edition);
+    } else {
+      loadJSLint(opts.edition);
+    }
+  }
+
+  files.forEach(function (file) {
+    jslint.validate(file, opts, function (err, violations) {
+      if (done) { return; }
+
+      if (err) {
+        done = true;
+        return cb(err);
+      }
+
+      report.files[file] = violations;
+
+      if (violations.length) {
+        report.failures += violations.length;
+        report.files_in_violation += 1;
+      }
+
+      pending -= 1;
+      if (!pending) {
+        done = true;
+        cb(null, report);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.validate" id="apidoc.element.grunt-jslint.validate">
+        function <span class="apidocSignatureSpan">grunt-jslint.</span>validate
+        <span class="apidocSignatureSpan">(file, opts, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (file, opts, cb) {
+  var directives = opts.directives || {};
+
+  // `predef` is obnoxious
+  if (directives.globals) {
+    directives.predef = directives.globals;
+    delete directives.globals;
+  }
+
+  fs.readFile(file, &#x27;utf8&#x27;, function (err, source) {
+    if (err) {
+      return cb(err);
+    }
+
+    source = jslint.preprocessScript(source, opts.shebang);
+
+    JSLINT(source, directives);
+
+    var violations = JSLINT.errors;
+    var res = [];
+
+    violations.forEach(function (violation) {
+      if (!violation) {
+        return;
+      }
+
+      violation.file = file;
+      res.push(violation);
+    });
+
+    return cb(null, res);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+loadJSLintFromPath(opts.edition);
+    } else {
+loadJSLint(opts.edition);
+    }
+  }
+
+  files.forEach(function (file) {
+    jslint.<span class="apidocCodeKeywordSpan">validate</span>(file, opts, function (err, violations) {
+if (done) { return; }
+
+if (err) {
+  done = true;
+  return cb(err);
+}
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-jslint.JSLINT" id="apidoc.module.grunt-jslint.JSLINT">module grunt-jslint.JSLINT</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.JSLINT.JSLINT" id="apidoc.element.grunt-jslint.JSLINT.JSLINT">
+        function <span class="apidocSignatureSpan">grunt-jslint.</span>JSLINT
+        <span class="apidocSignatureSpan">(the_source, the_option)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSLint(the_source, the_option) {
+
+    var i, predef, tree;
+    itself.errors = [];
+    itself.tree = &#x27;&#x27;;
+    itself.properties = &#x27;&#x27;;
+    begin = prev_token = token = next_token =
+        Object.create(syntax[&#x27;(begin)&#x27;]);
+    tokens = [];
+    predefined = Object.create(null);
+    add_to_predefined(standard);
+    property = Object.create(null);
+    if (the_option) {
+        option = Object.create(the_option);
+        predef = option.predef;
+        if (predef) {
+            if (Array.isArray(predef)) {
+                for (i = 0; i &#x3c; predef.length; i += 1) {
+                    predefined[predef[i]] = true;
+                }
+            } else if (typeof predef === &#x27;object&#x27;) {
+                add_to_predefined(predef);
+            }
+        }
+    } else {
+        option = Object.create(null);
+    }
+    option.indent = +option.indent || 4;
+    option.maxerr = +option.maxerr || 50;
+    global_scope = scope = Object.create(null);
+    global_funct = funct = {
+        scope: scope,
+        loopage: 0,
+        level: 0
+    };
+    functions = [funct];
+    block_var = [];
+
+    comments = [];
+    comments_off = false;
+    in_block = false;
+    indent = null;
+    json_mode = false;
+    lookahead = [];
+    node_js = false;
+    prereg = true;
+    strict_mode = false;
+    var_mode = null;
+    warnings = 0;
+    lex.init(the_source);
+
+    assume();
+
+    try {
+        advance();
+        if (next_token.id === &#x27;(number)&#x27;) {
+            next_token.stop(&#x27;unexpected_a&#x27;);
+        } else {
+            switch (next_token.id) {
+            case &#x27;{&#x27;:
+            case &#x27;[&#x27;:
+                comments_off = true;
+                json_mode = true;
+                json_value();
+                break;
+            default:
+
+// If the first token is a semicolon, ignore it. This is sometimes used when
+// files are intended to be appended to files that may be sloppy. A sloppy
+// file may be depending on semicolon insertion on its last line.
+
+                step_in(1);
+                if (next_token.id === &#x27;;&#x27; &#x26;&#x26; !node_js) {
+                    next_token.edge = true;
+                    advance(&#x27;;&#x27;);
+                }
+                tree = statements();
+                begin.first = tree;
+                itself.tree = begin;
+                if (tree.disrupt) {
+                    prev_token.warn(&#x27;weird_program&#x27;);
+                }
+            }
+        }
+        indent = null;
+        advance(&#x27;(end)&#x27;);
+        itself.property = property;
+    } catch (e) {
+        if (e) {        // ~~
+            itself.errors.push({
+                reason    : e.message,
+                line      : e.line || next_token.line,
+                character : e.character || next_token.from
+            }, null);
+        }
+    }
+    return itself.errors.length === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.JSLINT.color" id="apidoc.element.grunt-jslint.JSLINT.color">
+        function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>color
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">color = function (data) {
+    var from,
+        i = 1,
+        level,
+        line,
+        result = [],
+        thru,
+        data_token = data.tokens[0];
+    while (data_token &#x26;&#x26; data_token.id !== &#x27;(end)&#x27;) {
+        from = data_token.from;
+        line = data_token.line;
+        thru = data_token.thru;
+        level = data_token.function.level;
+        do {
+            thru = data_token.thru;
+            data_token = data.tokens[i];
+            i += 1;
+        } while (data_token &#x26;&#x26; data_token.line === line &#x26;&#x26;
+                data_token.from - thru &#x3c; 5 &#x26;&#x26;
+                level === data_token.function.level);
+        result.push({
+            line: line,
+            level: level,
+            from: from,
+            thru: thru
+        });
+    }
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.JSLINT.data" id="apidoc.element.grunt-jslint.JSLINT.data">
+        function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>data
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">data = function () {
+    var data = {functions: []},
+        function_data,
+        i,
+        the_function,
+        the_scope;
+    data.errors = itself.errors;
+    data.json = json_mode;
+    data.global = unique(Object.keys(global_scope));
+
+    function selects(name) {
+        var kind = the_scope[name].kind;
+        switch (kind) {
+        case &#x27;var&#x27;:
+        case &#x27;exception&#x27;:
+        case &#x27;label&#x27;:
+            function_data[kind].push(name);
+            break;
+        }
+    }
+
+    for (i = 1; i &#x3c; functions.length; i += 1) {
+        the_function = functions[i];
+        function_data = {
+            name: the_function.name,
+            line: the_function.line,
+            level: the_function.level,
+            parameter: the_function.parameter,
+            var: [],
+            exception: [],
+            closure: unique(the_function.closure),
+            outer: unique(the_function.outer),
+            global: unique(the_function.global),
+            label: []
+        };
+        the_scope = the_function.scope;
+        Object.keys(the_scope).forEach(selects);
+        function_data.var.sort();
+        function_data.exception.sort();
+        function_data.label.sort();
+        data.functions.push(function_data);
+    }
+    data.tokens = tokens;
+    return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.JSLINT.error_report" id="apidoc.element.grunt-jslint.JSLINT.error_report">
+        function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>error_report
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error_report = function (data) {
+    var evidence, i, output = [], warning;
+    if (data.errors.length) {
+        if (data.json) {
+            output.push(&#x27;&#x3c;cite&#x3e;JSON: bad.&#x3c;/cite&#x3e;&#x3c;br&#x3e;&#x27;);
+        }
+        for (i = 0; i &#x3c; data.errors.length; i += 1) {
+            warning = data.errors[i];
+            if (warning) {
+                evidence = warning.evidence || &#x27;&#x27;;
+                output.push(&#x27;&#x3c;cite&#x3e;&#x27;);
+                if (isFinite(warning.line)) {
+                    output.push(&#x27;&#x3c;address&#x3e;line &#x27; +
+                        String(warning.line) +
+                        &#x27; character &#x27; + String(warning.character) +
+                        &#x27;&#x3c;/address&#x3e;&#x27;);
+                }
+                output.push(warning.reason.entityify() + &#x27;&#x3c;/cite&#x3e;&#x27;);
+                if (evidence) {
+                    output.push(&#x27;&#x3c;pre&#x3e;&#x27; + evidence.entityify() + &#x27;&#x3c;/pre&#x3e;&#x27;);
+                }
+            }
+        }
+    }
+    return output.join(&#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.JSLINT.jslint" id="apidoc.element.grunt-jslint.JSLINT.jslint">
+        function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>jslint
+        <span class="apidocSignatureSpan">(the_source, the_option)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSLint(the_source, the_option) {
+
+    var i, predef, tree;
+    itself.errors = [];
+    itself.tree = &#x27;&#x27;;
+    itself.properties = &#x27;&#x27;;
+    begin = prev_token = token = next_token =
+        Object.create(syntax[&#x27;(begin)&#x27;]);
+    tokens = [];
+    predefined = Object.create(null);
+    add_to_predefined(standard);
+    property = Object.create(null);
+    if (the_option) {
+        option = Object.create(the_option);
+        predef = option.predef;
+        if (predef) {
+            if (Array.isArray(predef)) {
+                for (i = 0; i &#x3c; predef.length; i += 1) {
+                    predefined[predef[i]] = true;
+                }
+            } else if (typeof predef === &#x27;object&#x27;) {
+                add_to_predefined(predef);
+            }
+        }
+    } else {
+        option = Object.create(null);
+    }
+    option.indent = +option.indent || 4;
+    option.maxerr = +option.maxerr || 50;
+    global_scope = scope = Object.create(null);
+    global_funct = funct = {
+        scope: scope,
+        loopage: 0,
+        level: 0
+    };
+    functions = [funct];
+    block_var = [];
+
+    comments = [];
+    comments_off = false;
+    in_block = false;
+    indent = null;
+    json_mode = false;
+    lookahead = [];
+    node_js = false;
+    prereg = true;
+    strict_mode = false;
+    var_mode = null;
+    warnings = 0;
+    lex.init(the_source);
+
+    assume();
+
+    try {
+        advance();
+        if (next_token.id === &#x27;(number)&#x27;) {
+            next_token.stop(&#x27;unexpected_a&#x27;);
+        } else {
+            switch (next_token.id) {
+            case &#x27;{&#x27;:
+            case &#x27;[&#x27;:
+                comments_off = true;
+                json_mode = true;
+                json_value();
+                break;
+            default:
+
+// If the first token is a semicolon, ignore it. This is sometimes used when
+// files are intended to be appended to files that may be sloppy. A sloppy
+// file may be depending on semicolon insertion on its last line.
+
+                step_in(1);
+                if (next_token.id === &#x27;;&#x27; &#x26;&#x26; !node_js) {
+                    next_token.edge = true;
+                    advance(&#x27;;&#x27;);
+                }
+                tree = statements();
+                begin.first = tree;
+                itself.tree = begin;
+                if (tree.disrupt) {
+                    prev_token.warn(&#x27;weird_program&#x27;);
+                }
+            }
+        }
+        indent = null;
+        advance(&#x27;(end)&#x27;);
+        itself.property = property;
+    } catch (e) {
+        if (e) {        // ~~
+            itself.errors.push({
+                reason    : e.message,
+                line      : e.line || next_token.line,
+                character : e.character || next_token.from
+            }, null);
+        }
+    }
+    return itself.errors.length === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.JSLINT.properties_report" id="apidoc.element.grunt-jslint.JSLINT.properties_report">
+        function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>properties_report
+        <span class="apidocSignatureSpan">(property)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">properties_report = function (property) {
+    if (!property) {
+        return &#x27;&#x27;;
+    }
+    var i,
+        key,
+        keys = Object.keys(property).sort(),
+        mem = &#x27;   &#x27;,
+        name,
+        not_first = false,
+        output = [&#x27;/*properties&#x27;];
+    for (i = 0; i &#x3c; keys.length; i += 1) {
+        key = keys[i];
+        if (property[key] &#x3e; 0) {
+            if (not_first) {
+                mem += &#x27;,&#x27;;
+            }
+            name = ix.test(key)
+                ? key
+                : &#x27;\&#x27;&#x27; + key.replace(nx, sanitize) + &#x27;\&#x27;&#x27;;
+            if (mem.length + name.length &#x3e;= 80) {
+                output.push(mem);
+                mem = &#x27;    &#x27;;
+            } else {
+                mem += &#x27; &#x27;;
+            }
+            mem += name;
+            not_first = true;
+        }
+    }
+    output.push(mem, &#x27;*/\n&#x27;);
+    return output.join(&#x27;\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.JSLINT.report" id="apidoc.element.grunt-jslint.JSLINT.report">
+        function <span class="apidocSignatureSpan">grunt-jslint.JSLINT.</span>report
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">report = function (data) {
+    var dl, i, j, names, output = [], the_function;
+
+    function detail(h, array) {
+        var comma_needed = false;
+        if (array.length) {
+            output.push(&#x22;&#x3c;dt&#x3e;&#x22; + h + &#x22;&#x3c;/dt&#x3e;&#x3c;dd&#x3e;&#x22;);
+            array.forEach(function (item) {
+                output.push((comma_needed ? &#x27;, &#x27; : &#x27;&#x27;) + item);
+                comma_needed = true;
+            });
+            output.push(&#x22;&#x3c;/dd&#x3e;&#x22;);
+        }
+    }
+
+    output.push(&#x27;&#x3c;dl class=level0&#x3e;&#x27;);
+    if (data.global.length) {
+        detail(&#x27;global&#x27;, data.global);
+        dl = true;
+    } else if (data.json) {
+        if (!data.errors.length) {
+            output.push(&#x22;&#x3c;dt&#x3e;JSON: good.&#x3c;/dt&#x3e;&#x22;);
+        }
+    } else {
+        output.push(&#x22;&#x3c;dt&#x3e;&#x3c;i&#x3e;No new global variables introduced.&#x3c;/i&#x3e;&#x3c;/dt&#x3e;&#x22;);
+    }
+    if (dl) {
+        output.push(&#x22;&#x3c;/dl&#x3e;&#x22;);
+    } else {
+        output[0] = &#x27;&#x27;;
+    }
+
+    if (data.functions) {
+        for (i = 0; i &#x3c; data.functions.length; i += 1) {
+            the_function = data.functions[i];
+            names = [];
+            if (the_function.params) {
+                for (j = 0; j &#x3c; the_function.params.length; j += 1) {
+                    names[j] = the_function.params[j].string;
+                }
+            }
+            output.push(&#x27;&#x3c;dl class=level&#x27; + the_function.level +
+                &#x27;&#x3e;&#x3c;address&#x3e;line &#x27; + String(the_function.line) +
+                &#x27;&#x3c;/address&#x3e;&#x27; + the_function.name.entityify());
+            detail(&#x27;parameter&#x27;, the_function.parameter);
+            detail(&#x27;variable&#x27;, the_function.var);
+            detail(&#x27;exception&#x27;, the_function.exception);
+            detail(&#x27;closure&#x27;, the_function.closure);
+            detail(&#x27;outer&#x27;, the_function.outer);
+            detail(&#x27;global&#x27;, the_function.global);
+            detail(&#x27;label&#x27;, the_function.label);
+            output.push(&#x27;&#x3c;/dl&#x3e;&#x27;);
+        }
+    }
+    return output.join(&#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-jslint.jslint" id="apidoc.module.grunt-jslint.jslint">module grunt-jslint.jslint</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.jslint.JSLINT" id="apidoc.element.grunt-jslint.jslint.JSLINT">
+        function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>JSLINT
+        <span class="apidocSignatureSpan">(the_source, the_option)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSLint(the_source, the_option) {
+
+    var i, predef, tree;
+    itself.errors = [];
+    itself.tree = &#x27;&#x27;;
+    itself.properties = &#x27;&#x27;;
+    begin = prev_token = token = next_token =
+        Object.create(syntax[&#x27;(begin)&#x27;]);
+    tokens = [];
+    predefined = Object.create(null);
+    add_to_predefined(standard);
+    property = Object.create(null);
+    if (the_option) {
+        option = Object.create(the_option);
+        predef = option.predef;
+        if (predef) {
+            if (Array.isArray(predef)) {
+                for (i = 0; i &#x3c; predef.length; i += 1) {
+                    predefined[predef[i]] = true;
+                }
+            } else if (typeof predef === &#x27;object&#x27;) {
+                add_to_predefined(predef);
+            }
+        }
+    } else {
+        option = Object.create(null);
+    }
+    option.indent = +option.indent || 4;
+    option.maxerr = +option.maxerr || 50;
+    global_scope = scope = Object.create(null);
+    global_funct = funct = {
+        scope: scope,
+        loopage: 0,
+        level: 0
+    };
+    functions = [funct];
+    block_var = [];
+
+    comments = [];
+    comments_off = false;
+    in_block = false;
+    indent = null;
+    json_mode = false;
+    lookahead = [];
+    node_js = false;
+    prereg = true;
+    strict_mode = false;
+    var_mode = null;
+    warnings = 0;
+    lex.init(the_source);
+
+    assume();
+
+    try {
+        advance();
+        if (next_token.id === &#x27;(number)&#x27;) {
+            next_token.stop(&#x27;unexpected_a&#x27;);
+        } else {
+            switch (next_token.id) {
+            case &#x27;{&#x27;:
+            case &#x27;[&#x27;:
+                comments_off = true;
+                json_mode = true;
+                json_value();
+                break;
+            default:
+
+// If the first token is a semicolon, ignore it. This is sometimes used when
+// files are intended to be appended to files that may be sloppy. A sloppy
+// file may be depending on semicolon insertion on its last line.
+
+                step_in(1);
+                if (next_token.id === &#x27;;&#x27; &#x26;&#x26; !node_js) {
+                    next_token.edge = true;
+                    advance(&#x27;;&#x27;);
+                }
+                tree = statements();
+                begin.first = tree;
+                itself.tree = begin;
+                if (tree.disrupt) {
+                    prev_token.warn(&#x27;weird_program&#x27;);
+                }
+            }
+        }
+        indent = null;
+        advance(&#x27;(end)&#x27;);
+        itself.property = property;
+    } catch (e) {
+        if (e) {        // ~~
+            itself.errors.push({
+                reason    : e.message,
+                line      : e.line || next_token.line,
+                character : e.character || next_token.from
+            }, null);
+        }
+    }
+    return itself.errors.length === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.jslint.loadJSLint" id="apidoc.element.grunt-jslint.jslint.loadJSLint">
+        function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>loadJSLint
+        <span class="apidocSignatureSpan">(edition, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadJSLint(edition, cb) {
+  JSLINT = jslint.JSLINT = nodelint.load(edition);
+  jslint.edition = JSLINT.edition;
+
+  if (cb) {
+    cb(null, jslint.edition);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.jslint.loadJSLintFromPath" id="apidoc.element.grunt-jslint.jslint.loadJSLintFromPath">
+        function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>loadJSLintFromPath
+        <span class="apidocSignatureSpan">(path, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadJSLintFromPath(path, cb) {
+  var ctx = vm.createContext();
+  var code = fs.readFileSync(resolve(process.cwd(), path));
+
+  vm.runInContext(code, ctx);
+
+  JSLINT = jslint.JSLINT = ctx.JSLINT;
+  jslint.edition = JSLINT.edition;
+
+  if (cb) {
+    cb(null, jslint.edition);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.jslint.preprocessScript" id="apidoc.element.grunt-jslint.jslint.preprocessScript">
+        function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>preprocessScript
+        <span class="apidocSignatureSpan">(source, stripShebang)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function preprocessScript(source, stripShebang) {
+  if (source.charCodeAt(0) === 0xFEFF) {
+    source = source.slice(1);
+  }
+
+  if (stripShebang) {
+    // remove shebang lines for executable files
+    //   e.g. `#!/usr/bin/env node`
+<span class="apidocCodeCommentSpan">    /*jslint regexp: true*/
+</span>    source = source.replace(/^\#\!.*/, &#x27;&#x27;);
+    /*jslint regexp: false*/
+  }
+
+  return source;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  fs.readFile(file, &#x27;utf8&#x27;, function (err, source) {
+if (err) {
+  return cb(err);
+}
+
+source = jslint.<span class="apidocCodeKeywordSpan">preprocessScript</span>(source, opts.shebang);
+
+JSLINT(source, directives);
+
+var violations = JSLINT.errors;
+var res = [];
+
+violations.forEach(function (violation) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.jslint.runner" id="apidoc.element.grunt-jslint.jslint.runner">
+        function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>runner
+        <span class="apidocSignatureSpan">(files, opts, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runner = function (files, opts, cb) {
+  var pending = files.length;
+  var report = {
+    files: {},
+    failures: 0,
+    file_count: files.length,
+    files_in_violation: 0
+  };
+  var done = false;
+
+  if (opts.edition) {
+    if (opts.edition.indexOf(&#x22;.js&#x22;) === opts.edition.length - 3) {
+      loadJSLintFromPath(opts.edition);
+    } else {
+      loadJSLint(opts.edition);
+    }
+  }
+
+  files.forEach(function (file) {
+    jslint.validate(file, opts, function (err, violations) {
+      if (done) { return; }
+
+      if (err) {
+        done = true;
+        return cb(err);
+      }
+
+      report.files[file] = violations;
+
+      if (violations.length) {
+        report.failures += violations.length;
+        report.files_in_violation += 1;
+      }
+
+      pending -= 1;
+      if (!pending) {
+        done = true;
+        cb(null, report);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.jslint.validate" id="apidoc.element.grunt-jslint.jslint.validate">
+        function <span class="apidocSignatureSpan">grunt-jslint.jslint.</span>validate
+        <span class="apidocSignatureSpan">(file, opts, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (file, opts, cb) {
+  var directives = opts.directives || {};
+
+  // `predef` is obnoxious
+  if (directives.globals) {
+    directives.predef = directives.globals;
+    delete directives.globals;
+  }
+
+  fs.readFile(file, &#x27;utf8&#x27;, function (err, source) {
+    if (err) {
+      return cb(err);
+    }
+
+    source = jslint.preprocessScript(source, opts.shebang);
+
+    JSLINT(source, directives);
+
+    var violations = JSLINT.errors;
+    var res = [];
+
+    violations.forEach(function (violation) {
+      if (!violation) {
+        return;
+      }
+
+      violation.file = file;
+      res.push(violation);
+    });
+
+    return cb(null, res);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+loadJSLintFromPath(opts.edition);
+    } else {
+loadJSLint(opts.edition);
+    }
+  }
+
+  files.forEach(function (file) {
+    jslint.<span class="apidocCodeKeywordSpan">validate</span>(file, opts, function (err, violations) {
+if (done) { return; }
+
+if (err) {
+  done = true;
+  return cb(err);
+}
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-jslint.reporters" id="apidoc.module.grunt-jslint.reporters">module grunt-jslint.reporters</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.reporters.checkstyle" id="apidoc.element.grunt-jslint.reporters.checkstyle">
+        function <span class="apidocSignatureSpan">grunt-jslint.reporters.</span>checkstyle
+        <span class="apidocSignatureSpan">(report)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkstyle = function (report) {
+  var xml = [
+    &#x27;&#x3c;?xml version=&#x22;1.0&#x22; encoding=&#x22;utf-8&#x22;?&#x3e;&#x27;,
+    &#x27;&#x3c;checkstyle&#x3e;&#x27;
+  ];
+
+  Object.keys(report.files).forEach(function (file) {
+    var issues = report.files[file];
+
+    xml.push(&#x27;&#x3c;file name=&#x22;&#x27; + file + &#x27;&#x22;&#x3e;&#x27;);
+
+    issues.forEach(function (issue) {
+      var msg = issue.reason || &#x27;Unused variable &#x22;&#x27; + issue.name + &#x27;&#x22;&#x27;;
+
+      xml.push([
+        &#x27;&#x3c;error&#x27;,
+        &#x27; line=&#x22;&#x27; + issue.line + &#x27;&#x22;&#x27;,
+        &#x27; column=&#x22;&#x27; + issue.character + &#x27;&#x22;&#x27;,
+        &#x27; severity=&#x22;warning&#x22;&#x27;,
+        &#x27; message=&#x22;&#x27; + util.escapeForXml(msg) + &#x27;&#x22;&#x27;,
+        &#x27; source=&#x22;com.jslint&#x22;&#x27;,
+        &#x27;/&#x3e;&#x27;
+      ].join(&#x27;&#x27;));
+    });
+
+    xml.push(&#x27;&#x3c;/file&#x3e;&#x27;);
+  });
+
+  xml.push(&#x27;&#x3c;/checkstyle&#x3e;&#x27;);
+
+  return xml.join(&#x27;\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.reporters.errorsOnly" id="apidoc.element.grunt-jslint.reporters.errorsOnly">
+        function <span class="apidocSignatureSpan">grunt-jslint.reporters.</span>errorsOnly
+        <span class="apidocSignatureSpan">(report)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errorsOnly = function (report) {
+  return standard(report, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.reporters.jslint" id="apidoc.element.grunt-jslint.reporters.jslint">
+        function <span class="apidocSignatureSpan">grunt-jslint.reporters.</span>jslint
+        <span class="apidocSignatureSpan">(report)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">jslint = function (report) {
+  var xml = [
+    &#x27;&#x3c;?xml version=&#x22;1.0&#x22; encoding=&#x22;utf-8&#x22;?&#x3e;&#x27;,
+    &#x27;&#x3c;jslint&#x3e;&#x27;
+  ];
+
+  Object.keys(report.files).forEach(function (file) {
+    var issues = report.files[file];
+
+    xml.push(&#x27;&#x3c;file name=&#x22;&#x27; + file + &#x27;&#x22;&#x3e;&#x27;);
+
+    issues.forEach(function (issue) {
+      var reason = util.message(issue),
+        evidence = issue.evidence || &#x27;&#x27;;
+
+      xml.push([
+        &#x27;&#x3c;issue&#x27;,
+        &#x27; line=&#x22;&#x27; + issue.line + &#x27;&#x22;&#x27;,
+        &#x27; char=&#x22;&#x27; + issue.character + &#x27;&#x22;&#x27;,
+        &#x27; reason=&#x22;&#x27; + util.escapeForXml(reason) + &#x27;&#x22;&#x27;,
+        &#x27; evidence=&#x22;&#x27; + util.escapeForXml(evidence) + &#x27;&#x22;&#x27;,
+        &#x27;/&#x3e;&#x27;
+      ].join(&#x27;&#x27;));
+    });
+
+    xml.push(&#x27;&#x3c;/file&#x3e;&#x27;);
+  });
+
+  xml.push(&#x27;&#x3c;/jslint&#x3e;&#x27;);
+
+  return xml.join(&#x27;\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.reporters.junit" id="apidoc.element.grunt-jslint.reporters.junit">
+        function <span class="apidocSignatureSpan">grunt-jslint.reporters.</span>junit
+        <span class="apidocSignatureSpan">(report)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">junit = function (report) {
+  var xml = [
+    &#x27;&#x3c;?xml version=&#x22;1.0&#x22; encoding=&#x22;utf-8&#x22;?&#x3e;&#x27;,
+    &#x27;&#x3c;testsuites&#x3e;&#x27;,
+    &#x27;  &#x3c;testsuite&#x3e;&#x27;
+  ];
+
+  Object.keys(report.files).forEach(function (file) {
+    var parts = file.split(/[\\\/]/).filter(function (part) { return part; });
+    var classname = parts.join(&#x27;.&#x27;).replace(/\.js$/i, &#x27;&#x27;).replace(/-/g, &#x27;_&#x27;);
+    var filename = path.basename(file, &#x27;.js&#x27;);
+    var failures = report.files[file];
+
+    if (failures.length) {
+      failures.forEach(function (failure) {
+        var name = filename
+                 + &#x27;:&#x27;
+                 + failure.line
+                 + &#x27;:&#x27;
+                 + (failure.character || &#x27;&#x27;);
+
+        xml.push([
+          &#x27;&#x3c;testcase classname=&#x22;&#x27; + classname + &#x27;&#x22; name=&#x22;&#x27; + name + &#x27;&#x22;&#x3e;&#x27;,
+          &#x27;  &#x3c;failure message=&#x22;&#x27; + util.message(failure) + &#x27;&#x22; /&#x3e;&#x27;,
+          &#x27;&#x3c;/testcase&#x3e;&#x27;
+        ].join(&#x27;\n&#x27;));
+      });
+    } else {
+      xml.push([
+        &#x27;&#x3c;testcase classname=&#x22;&#x27; + classname + &#x27;&#x22; name=&#x22;&#x27; + filename + &#x27;:0:0&#x22;&#x3e;&#x3c;/testcase&#x3e;&#x27;
+      ].join(&#x27;\n&#x27;));
+    }
+  });
+
+  xml = xml.concat([
+    &#x27;  &#x3c;/testsuite&#x3e;&#x27;,
+    &#x27;&#x3c;/testsuites&#x3e;&#x27;
+  ]);
+
+  return xml.join(&#x27;\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.reporters.standard" id="apidoc.element.grunt-jslint.reporters.standard">
+        function <span class="apidocSignatureSpan">grunt-jslint.reporters.</span>standard
+        <span class="apidocSignatureSpan">(report, errorsOnly)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">standard = function (report, errorsOnly) {
+  var buf = &#x27;&#x27;;
+
+  Object.keys(report.files).forEach(function (file) {
+    var issues = report.files[file];
+
+    if (!issues.length) {
+      if (!errorsOnly) {
+        buf += util.color.green(&#x27;PASS&#x27;);
+        buf += &#x27;\t&#x27; + file + &#x27;\n&#x27;;
+      }
+      return;
+    }
+
+    buf += red(&#x27;FAIL&#x27;) + &#x27;\t&#x27;;
+    buf += file + &#x27; (&#x27; + issues.length + &#x27;)\n&#x27;;
+    issues.forEach(function (issue) {
+      buf += red(file + &#x27;:&#x27; + issue.line);
+      if (issue.character) {
+        buf += red(&#x27;:&#x27; + issue.character);
+      }
+      buf += &#x27;\t&#x27;;
+      buf += util.message(issue) + &#x27;\n&#x27;;
+    });
+  });
+
+  if (report.failures) {
+    buf += red([
+      &#x27;\n&#x27;,
+      &#x27;# JSLint failed, &#x27;,
+      report.failures + &#x27; &#x27;,
+      &#x27;violations in &#x27;,
+      report.files_in_violation + &#x27;.  &#x27;,
+      report.file_count + &#x27; &#x27;,
+      &#x27;files scanned.&#x27;
+    ].join(&#x27;&#x27;));
+  }
+
+  return buf + &#x27;\n&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-jslint.reporters._util" id="apidoc.module.grunt-jslint.reporters._util">module grunt-jslint.reporters._util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.reporters._util.escapeForXml" id="apidoc.element.grunt-jslint.reporters._util.escapeForXml">
+        function <span class="apidocSignatureSpan">grunt-jslint.reporters._util.</span>escapeForXml
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeForXml = function (value) {
+  return value
+    .replace(/&#x26;/g, &#x27;&#x26;amp;&#x27;)
+    .replace(/&#x3c;/g, &#x27;&#x26;lt;&#x27;)
+    .replace(/&#x3e;/g, &#x27;&#x26;gt;&#x27;)
+    .replace(/&#x22;/g, &#x27;&#x26;quot;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var msg = issue.reason || &#x27;Unused variable &#x22;&#x27; + issue.name + &#x27;&#x22;&#x27;;
+
+    xml.push([
+      &#x27;&#x3c;error&#x27;,
+      &#x27; line=&#x22;&#x27; + issue.line + &#x27;&#x22;&#x27;,
+      &#x27; column=&#x22;&#x27; + issue.character + &#x27;&#x22;&#x27;,
+      &#x27; severity=&#x22;warning&#x22;&#x27;,
+      &#x27; message=&#x22;&#x27; + util.<span class="apidocCodeKeywordSpan">escapeForXml</span>(msg) + &#x27;&#x22;&#x27;,
+      &#x27; source=&#x22;com.jslint&#x22;&#x27;,
+      &#x27;/&#x3e;&#x27;
+    ].join(&#x27;&#x27;));
+  });
+
+  xml.push(&#x27;&#x3c;/file&#x3e;&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-jslint.reporters._util.message" id="apidoc.element.grunt-jslint.reporters._util.message">
+        function <span class="apidocSignatureSpan">grunt-jslint.reporters._util.</span>message
+        <span class="apidocSignatureSpan">(issue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">message = function (issue) {
+  var msg = issue.reason || &#x27;Unused variable &#x22;&#x27; + issue.name + &#x27;&#x22;&#x27;;
+  return exports.escapeForXml(msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+             + &#x27;:&#x27;
+             + failure.line
+             + &#x27;:&#x27;
+             + (failure.character || &#x27;&#x27;);
+
+    xml.push([
+      &#x27;&#x3c;testcase classname=&#x22;&#x27; + classname + &#x27;&#x22; name=&#x22;&#x27; + name + &#x27;&#x22;&#x3e;&#x27;,
+      &#x27;  &#x3c;failure message=&#x22;&#x27; + util.<span class="apidocCodeKeywordSpan">message</span>(failure) + &#x27;&#x22
+; /&#x3e;&#x27;,
+      &#x27;&#x3c;/testcase&#x3e;&#x27;
+    ].join(&#x27;\n&#x27;));
+  });
+} else {
+  xml.push([
+    &#x27;&#x3c;testcase classname=&#x22;&#x27; + classname + &#x27;&#x22; name=&#x22;&#x27; + filename + &#x27;:0:0&#x22;&#x3e;&#
+x3c;/testcase&#x3e;&#x27;
+  ].join(&#x27;\n&#x27;));
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
